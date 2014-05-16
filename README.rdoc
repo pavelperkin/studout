@@ -1,28 +1,50 @@
-== README
+====== How to run application ======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Make sure you have the following installed.
 
-Things you may want to cover:
+  homebrew, rvm, ruby 2.1.1, mysql
 
-* Ruby version
+2. Run following in your bash terminal (iterm e.g.)
 
-* System dependencies
+  `git cone https://github.com/pavelperkin/studout.git`
 
-* Configuration
+It will create a directory `/studout` and fetch there current version of application
 
-* Database creation
+3. Install all gems. Run `bundle install` in application directory
 
-* Database initialization
+4. Create a database configuration file in `studout/config` . Call it `database.yml` and fill it with your database configurations.
 
-* How to run the test suite
+For example:
 
-* Services (job queues, cache servers, search engines, etc.)
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: studout_development
+  pool: 5
+  username: database_username
+  password: database_password
+  socket: /tmp/mysql.sock
 
-* Deployment instructions
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: studout_test
+  pool: 5
+  username: database_username
+  password: database_password
+  socket: /tmp/mysql.sock
 
-* ...
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: studout_production
+  pool: 5
+  username: database_username
+  password: database_password
+  socket: /tmp/mysql.sock
 
+5. Create database. Run `bundle exec rake db:create` in application directory.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+6. Create all tables in your database. Run `bundle exec rake db:migrate` in application directory
+
+7. Run `bundle exec rake db:seed` . It will create a test user for you with email: `testuser@studout.com` and password: `testpassword`.
