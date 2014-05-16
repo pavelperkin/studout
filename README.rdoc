@@ -1,50 +1,64 @@
-====== How to run application ======
+How to run application
 
 1. Make sure you have the following installed.
 
   homebrew, rvm, ruby 2.1.1, mysql
 
-2. Run following in your bash terminal (iterm e.g.)
+Run following in your bash terminal (iTerm e.g.)
 
-  `git cone https://github.com/pavelperkin/studout.git`
+  git cone https://github.com/pavelperkin/studout.git
 
 It will create a directory `/studout` and fetch there current version of application
 
-3. Install all gems. Run `bundle install` in application directory
+Install all gems. Run 
 
-4. Create a database configuration file in `studout/config` . Call it `database.yml` and fill it with your database configurations.
+  bundle install
+
+in application directory
+
+Create a database configuration file in `studout/config`. Call it `database.yml` and fill it with your database configurations.
 
 For example:
 
-development:
-  adapter: mysql2
-  encoding: utf8
-  database: studout_development
-  pool: 5
-  username: database_username
-  password: database_password
-  socket: /tmp/mysql.sock
+  development:
+    adapter: mysql2
+    encoding: utf8
+    database: studout_development
+    pool: 5
+    username: database_username
+    password: database_password
+    socket: /tmp/mysql.sock
 
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: studout_test
-  pool: 5
-  username: database_username
-  password: database_password
-  socket: /tmp/mysql.sock
+  test:
+    adapter: mysql2
+    encoding: utf8
+    database: studout_test
+    pool: 5
+    username: database_username
+    password: database_password
+    socket: /tmp/mysql.sock
 
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: studout_production
-  pool: 5
-  username: database_username
-  password: database_password
-  socket: /tmp/mysql.sock
+  production:
+    adapter: mysql2
+    encoding: utf8
+    database: studout_production
+    pool: 5
+    username: database_username
+    password: database_password
+    socket: /tmp/mysql.sock
 
-5. Create database. Run `bundle exec rake db:create` in application directory.
+Create database. Run 
+  bundle exec rake db:create
+in application directory.
 
-6. Create all tables in your database. Run `bundle exec rake db:migrate` in application directory
+Create all tables in your database. Run 
+  
+  bundle exec rake db:migrate
 
-7. Run `bundle exec rake db:seed` . It will create a test user for you with email: `testuser@studout.com` and password: `testpassword`.
+in application directory
+
+Run 
+
+  bundle exec rake db:seed
+
+It will create a test user for you with email: `testuser@studout.com` and password: `testpassword`.
