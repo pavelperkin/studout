@@ -6,7 +6,6 @@ class CreatePlaces < ActiveRecord::Migration
       t.float :discount
       t.float :latitude
       t.float :longitude
-      t.integer :country_id
       t.integer :city_id
       t.string :address
 

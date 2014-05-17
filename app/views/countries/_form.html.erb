@@ -1,10 +1,7 @@
-<%= form_for(@city) do |f| %>
+<%= form_for(@country) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-     <%= f.select :country_id, (@countries.map {|c| [c.name, c.id] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>

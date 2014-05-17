@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_filter :authenticate_user!
+  before_action :get_countries, only: [:index, :edit, :destroy]
   before_action :set_city, only: [:edit, :update, :destroy]
 
   def index
@@ -33,11 +34,15 @@ class CitiesController < ApplicationController
   end
 
   private
+    def get_countries
+      @countries = Country.all
+    end
+
     def set_city
       @city = City.find(params[:id])
     end
 
     def city_params
-      params.require(:city).permit(:name)
+      params.require(:city).permit(:name, :country_id)
     end
 end
