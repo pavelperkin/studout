@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :get_cities
 
   # GET /places
   # GET /places.json
@@ -64,6 +65,11 @@ class PlacesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def get_cities
+      @cities = City.all
+    end
+
     def set_place
       @place = Place.find(params[:id])
     end
