@@ -1,4 +1,6 @@
 Studout::Application.routes.draw do
+  resources :cities
+
   resources :places
 
   devise_for :users
