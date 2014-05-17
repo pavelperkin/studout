@@ -10,6 +10,7 @@ gem 'devise'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
+gem 'quiet_assets'
 
 group :doc do
   gem 'sdoc', require: false
