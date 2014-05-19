@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'httparty'
+gem 'carrierwave'
 gem 'quiet_assets'
 
 group :doc do
