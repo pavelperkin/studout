@@ -1,4 +1,6 @@
 Studout::Application.routes.draw do
+  resources :pictures
+
   resources :countries
 
   resources :cities
