@@ -24,6 +24,10 @@
     <%= f.text_field :discount %>
   </div>
   <div class="field">
+    <%= f.label :discount_description %><br>
+    <%= f.text_area :discount_description %>
+  </div>
+  <div class="field">
     <%= f.label :city_id %><br>
     <%= f.select :city_id, (@cities.map {|c| [c.name, c.id] }) %>
   </div>
@@ -35,3 +39,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+
