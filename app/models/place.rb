@@ -1,10 +1,10 @@
 class Place < ActiveRecord::Base
   belongs_to :city
+  has_many :pictures
 
   validates :city_id,  presence: true
   validates :address,  presence: true
   validates :title,    presence: true
-  validates :discount, presence: true
 
   before_save :set_lat_and_lng
 

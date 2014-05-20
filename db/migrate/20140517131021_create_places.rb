@@ -3,7 +3,7 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
       t.string :title
       t.text :description
-      t.float :discount
+      t.integer :discount
       t.float :latitude
       t.float :longitude
       t.integer :city_id

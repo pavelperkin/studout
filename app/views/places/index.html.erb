@@ -1,39 +1,27 @@
-<h1>Listing places</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Discount</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>City</th>
-      <th>Address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
+<h1>Список заведений</h1>
+<%= link_to 'Добавить заведение', new_place_path, class: 'btn pull-right' %>
+<div class="row-fluid">
+  <div class="span9">
+  <table class='table table-striped'>
+    <thead>
       <tr>
-        <td><%= place.title %></td>
-        <td><%= place.description %></td>
-        <td><%= place.discount %></td>
-        <td><%= place.latitude %></td>
-        <td><%= place.longitude %></td>
-        <td><%= place.city_id %></td>
-        <td><%= place.address %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Название</th>
+        <th>Адрес</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Place', new_place_path %>
+    <tbody>
+      <% @places.each do |place| %>
+        <tr>
+          <td><%= link_to place.title, place %></td>
+          <td><%= "#{place.city.name}, #{place.address}" %></td>
+          <td><%= link_to 'Редактировать', edit_place_path(place) %></td>
+          <td><%= link_to 'Удалить', place, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
