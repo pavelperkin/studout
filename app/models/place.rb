@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
   belongs_to :city
+  belongs_to :category
   has_many :pictures
 
   validates :city_id,  presence: true

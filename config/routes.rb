@@ -1,4 +1,6 @@
 Studout::Application.routes.draw do
+  resources :categories
+
   resources :pictures, only: [:create, :destroy]
   resources :countries, only: [:index, :edit, :create, :update, :destroy]
   resources :cities, only: [:index, :edit, :create, :update, :destroy]

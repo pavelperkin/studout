@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :category_id, "Категория" %>
+    <%= f.select :category_id, (@categories.map {|c| [c.name, c.id] }) %>
+  </div>
+  <div class="field">
     <%= f.label :description, "Описание" %>
     <%= f.text_area :description %>
   </div>

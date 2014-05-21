@@ -8,6 +8,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.float :longitude
       t.integer :city_id
       t.string :address
+      t.integer :category_id
 
       t.timestamps
     end

@@ -1,0 +1,13 @@
+<h1>Категории</h1>
+<ul>
+  <% @categories.each do |category| %>
+    <li>
+      <%= link_to category.name, edit_category_path(category) %>
+      <%= link_to 'X', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<%= link_to 'Добавить категорию', new_category_path %>

@@ -7,6 +7,7 @@
       <tr>
         <th>Название</th>
         <th>Адрес</th>
+        <th>Тип заведения</th>
         <th></th>
         <th></th>
       </tr>
@@ -17,6 +18,7 @@
         <tr>
           <td><%= link_to place.title, place %></td>
           <td><%= "#{place.city.name}, #{place.address}" %></td>
+          <td><%= place.category.name %></td>
           <td><%= link_to 'Редактировать', edit_place_path(place) %></td>
           <td><%= link_to 'Удалить', place, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
         </tr>

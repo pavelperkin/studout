@@ -2,6 +2,7 @@ class PlacesController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :get_cities
+  before_action :get_categories
 
   def index
     @places = Place.all
@@ -40,6 +41,10 @@ class PlacesController < ApplicationController
   end
 
   private
+    def get_categories
+      @categories = Category.all
+    end
+
     def get_cities
       @cities = City.all
     end
@@ -49,6 +54,6 @@ class PlacesController < ApplicationController
     end
 
     def place_params
-      params.require(:place).permit(:title, :description, :discount, :discount_description, :city_id, :address)
+      params.require(:place).permit(:title, :description, :discount, :discount_description, :city_id, :address, :category_id)
     end
 end
