@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 gem 'rails', '4.0.5'
 # gem 'mysql2'
+
 gem 'pg'
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
