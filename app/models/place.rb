@@ -8,6 +8,7 @@ class Place < ActiveRecord::Base
   validates :title,    presence: true
 
   before_save :set_lat_and_lng
+  mount_uploader :avatar, ImageUploader
 
   private
 

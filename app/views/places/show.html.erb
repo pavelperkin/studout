@@ -16,7 +16,10 @@
   <div class="span1"></div>
   <div class="span6">
     <span class="label label-success pull-right"><%= @place.category.name%></span>
-    <h2 class='text-center'><%= @place.title %></h2>
+    <div class="row">
+      <div class="span6"><%= image_tag @place.avatar, class: "img-polaroid" %></div>
+      <div class="span6"><h2 class='text-center'><%= @place.title %></h2></div>
+    </div>
     <h4><%= @place.city.name %>, <%= @place.address %></h4>
     <hr>
     <p><%= @place.description %></p>
