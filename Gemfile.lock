@@ -156,7 +156,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  carrierwave
+  carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.0)
   devise
   fog
