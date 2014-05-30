@@ -5,10 +5,17 @@ class PlacesController < ApplicationController
   before_action :get_categories
 
   def index
-    @places = Place.all
+    if user_signed_in? || request.format.json?
+      @places = Place.all
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show
+    unless user_signed_in? || request.format.json?
+      redirect_to new_user_session_path
+    end
   end
 
   def new
