@@ -4,6 +4,7 @@
       <% if user_signed_in? %>
         <li class='nav_item'><%= link_to "Заведения", places_path %></li>
         <li class='nav_item'><%= link_to "Категории", categories_path %></li>
+        <li class='nav_item'><%= link_to "Города", cities_path %></li>
         <li class='nav_item'><%= link_to "Выйти", destroy_user_session_path %></li>
       <% else %>
         <li class='nav_item'><%= link_to "Войти", new_user_session_path %></li>
