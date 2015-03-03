@@ -1,0 +1,27 @@
+<h1>Listing high_schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @high_schools.each do |high_school| %>
+      <tr>
+        <td><%= high_school.name %></td>
+        <td><%= link_to 'Show', high_school %></td>
+        <td><%= link_to 'Edit', edit_high_school_path(high_school) %></td>
+        <td><%= link_to 'Destroy', high_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New High school', new_high_school_path %>
