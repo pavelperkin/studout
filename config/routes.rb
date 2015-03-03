@@ -1,4 +1,6 @@
 Studout::Application.routes.draw do
+  resources :comments
+
   resources :high_schools
 
   resources :categories
