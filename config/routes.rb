@@ -1,4 +1,6 @@
 Studout::Application.routes.draw do
+  resources :high_schools
+
   resources :categories
 
   resources :pictures, only: [:create, :destroy]
