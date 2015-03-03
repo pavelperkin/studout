@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <strong>Highschool:</strong>
+  <%= @comment.highschool_id %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @comment.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @comment.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
