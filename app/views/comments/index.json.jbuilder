@@ -1,4 +1,4 @@
 json.array!(@comments) do |comment|
-  json.extract! comment, :id, :body, :highschool_id, :latitude, :longitude
-  json.url comment_url(comment, format: :json)
+  json.extract! comment, :id, :body, :latitude, :longitude, :created_at
+  json.high_school comment.high_school.name
 end
