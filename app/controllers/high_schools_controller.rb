@@ -28,7 +28,7 @@ class HighSchoolsController < ApplicationController
 
     respond_to do |format|
       if @high_school.save
-        format.html { redirect_to @high_school, notice: 'High school was successfully created.' }
+        format.html { redirect_to high_schools_path, notice: 'High school was successfully created.' }
         format.json { render action: 'show', status: :created, location: @high_school }
       else
         format.html { render action: 'new' }
