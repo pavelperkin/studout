@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :get_cities
   before_action :get_categories
+  skip_before_action :verify_authenticity_token, only: [:index, :show]
 
   def index
     if user_signed_in? || request.format.json?
